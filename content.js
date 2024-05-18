@@ -202,29 +202,45 @@ function analyze() {
     })
         .then(response => response.json())
         .then(response => {
-                var sponsorData = document.createElement('div');
-                sponsorData.style.display = 'flex';
-                sponsorData.style.alignItems = 'center';
-                sponsorData.style.marginLeft = '5px';
-                var sponsorImage = document.createElement('a');
-                sponsorImage.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M17.8851 9.75307C17.8788 9.01228 16.868 8.42843 15.6313 8.42843H13.0511C12.6995 8.42843 12.5677 8.36565 12.3542 8.13337L8.09781 3.53167C7.9597 3.381 7.79647 3.30566 7.61441 3.30566H6.80457C6.64134 3.30566 6.54717 3.45633 6.62251 3.62584L8.82605 8.42215L5.60549 8.77999L4.45663 6.7334C4.36874 6.57645 4.2369 6.50739 4.02973 6.50739H3.74723C3.57772 6.50739 3.46472 6.6204 3.46472 6.7899V12.7162C3.46472 12.8857 3.57772 12.9987 3.74723 12.9987H4.02973C4.2369 12.9987 4.36874 12.9297 4.45663 12.7727L5.60549 10.7199L8.82605 11.084L6.62251 15.8803C6.54717 16.0498 6.64134 16.2005 6.80457 16.2005H7.61441C7.79647 16.2005 7.9597 16.1189 8.09781 15.9745L12.3542 11.3728C12.5677 11.1405 12.6995 11.0777 13.0511 11.0777H15.6313C16.868 11.0777 17.8788 10.4876 17.8851 9.75307Z" fill="white"/>
-                    </svg>
-                `;
-                var sponsorText = document.createElement('h4');
-                sponsorText.id = "sponsorText"
-                sponsorText.innerText = response.sponsorship;
-                sponsorText.style.cssText = `
-                    color: #FFFFFF;
-                    font-weight: bold;
-                    font-size: 12px;
-                    display: flex;
-                    margin-left: 5px;
-                `;
-                sponsorData.appendChild(sponsorImage);
-                sponsorData.appendChild(sponsorText);
-                var experienceData = document.createElement('div');
+            var applicantsData = document.createElement('div');
+            applicantsData.style.cssText = `
+                display: flex;
+                align-items: center;
+                margin-left: 5px;
+            `;
+            var applicantsImage = document.createElement('a');
+            applicantsImage.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M13.2771 9.81585C14.7963 9.81585 16.0268 8.47865 16.0268 6.83384C16.0268 5.21415 14.8026 3.9209 13.2771 3.9209C11.7704 3.9209 10.5273 5.23298 10.5273 6.8464C10.5336 8.48493 11.7641 9.81585 13.2771 9.81585ZM6.00098 9.96024C7.32562 9.96024 8.39286 8.78627 8.39286 7.33608C8.39286 5.92355 7.32562 4.78097 6.00098 4.78097C4.6889 4.78097 3.60282 5.94238 3.6091 7.34235C3.6091 8.79255 4.68262 9.96024 6.00098 9.96024ZM13.2771 8.71722C12.4107 8.71722 11.6762 7.90109 11.6762 6.84012C11.6762 5.81682 12.4044 5.01953 13.2771 5.01953C14.156 5.01953 14.8779 5.80427 14.8779 6.83384C14.8779 7.88853 14.1497 8.71722 13.2771 8.71722ZM6.00098 8.87416C5.29158 8.87416 4.6889 8.19615 4.6889 7.34235C4.6889 6.52623 5.2853 5.86077 6.00098 5.86077C6.72922 5.86077 7.31934 6.51367 7.31934 7.33608C7.31934 8.19615 6.71666 8.87416 6.00098 8.87416ZM2.54813 15.7296H7.42606C7.08078 15.5287 6.8485 15.0705 6.89244 14.6561H2.49163C2.37235 14.6561 2.32213 14.5996 2.32213 14.4929C2.32213 13.0552 4.00461 11.6867 5.9947 11.6867C6.69783 11.6867 7.40095 11.8624 7.94085 12.1638C8.1543 11.8562 8.41797 11.5925 8.76326 11.3665C7.96596 10.8768 6.97406 10.6131 5.9947 10.6131C3.33915 10.6131 1.19211 12.5091 1.19211 14.5933C1.19211 15.3467 1.64412 15.7296 2.54813 15.7296ZM9.36594 15.7296H17.1882C18.2743 15.7296 18.8016 15.3843 18.8016 14.6436C18.8016 12.9171 16.642 10.6194 13.2771 10.6194C9.91211 10.6194 7.75252 12.9171 7.75252 14.6436C7.75252 15.3843 8.27986 15.7296 9.36594 15.7296ZM9.16504 14.631C9.02065 14.631 8.96415 14.5808 8.96415 14.4678C8.96415 13.5073 10.5148 11.7181 13.2771 11.7181C16.0393 11.7181 17.59 13.5073 17.59 14.4678C17.59 14.5808 17.5335 14.631 17.3828 14.631H9.16504Z" fill="white"/>
+                </svg>
+            `;
+            let applicantsElements = document.getElementsByClassName('jobs-premium-applicant-insights__list-num');
+            console.log("length: ", applicantsElements.length)
+            let total_applicants = applicantsElements.length > 0 ? applicantsElements[0].innerText : "err_no_premium";
+            if(total_applicants == "err_no_premium"){
+                const applicantElements = document.querySelectorAll('.job-details-jobs-unified-top-card__primary-description-without-tagline .tvm__text--neutral');
+                if (applicantElements.length > 0) {
+                    const lastApplicantElement = applicantElements[applicantElements.length - 1];
+                    total_applicants = lastApplicantElement.textContent.trim();
+                } 
+                else {
+                    total_applicants = "No applicant info"
+                }
+            }
+            var applicantsText = document.createElement('h4');
+            applicantsText.id = "applicantsText"
+            applicantsText.innerText = total_applicants + " Applicants";
+            applicantsText.style.cssText = `
+                color: #FFFFFF;
+                font-weight: bold;
+                font-size: 12px;
+                display: flex;
+                margin-left: 5px;
+            `;
+            applicantsData.appendChild(applicantsImage);
+            applicantsData.appendChild(applicantsText);
+
+            var experienceData = document.createElement('div');
                 experienceData.style.cssText = `
                     display: flex;
                     align-items: center;
@@ -248,43 +264,32 @@ function analyze() {
                 `;
                 experienceData.appendChild(experienceImage);
                 experienceData.appendChild(experienceText);
-                var applicantsData = document.createElement('div');
-                applicantsData.style.cssText = `
-                    display: flex;
-                    align-items: center;
-                    margin-left: 5px;
-                `;
-                var applicantsImage = document.createElement('a');
-                applicantsImage.innerHTML = `
+
+                var sponsorData = document.createElement('div');
+                sponsorData.style.display = 'flex';
+                sponsorData.style.alignItems = 'center';
+                sponsorData.style.marginLeft = '5px';
+
+                var sponsorImage = document.createElement('a');
+                sponsorImage.innerHTML = `
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M13.2771 9.81585C14.7963 9.81585 16.0268 8.47865 16.0268 6.83384C16.0268 5.21415 14.8026 3.9209 13.2771 3.9209C11.7704 3.9209 10.5273 5.23298 10.5273 6.8464C10.5336 8.48493 11.7641 9.81585 13.2771 9.81585ZM6.00098 9.96024C7.32562 9.96024 8.39286 8.78627 8.39286 7.33608C8.39286 5.92355 7.32562 4.78097 6.00098 4.78097C4.6889 4.78097 3.60282 5.94238 3.6091 7.34235C3.6091 8.79255 4.68262 9.96024 6.00098 9.96024ZM13.2771 8.71722C12.4107 8.71722 11.6762 7.90109 11.6762 6.84012C11.6762 5.81682 12.4044 5.01953 13.2771 5.01953C14.156 5.01953 14.8779 5.80427 14.8779 6.83384C14.8779 7.88853 14.1497 8.71722 13.2771 8.71722ZM6.00098 8.87416C5.29158 8.87416 4.6889 8.19615 4.6889 7.34235C4.6889 6.52623 5.2853 5.86077 6.00098 5.86077C6.72922 5.86077 7.31934 6.51367 7.31934 7.33608C7.31934 8.19615 6.71666 8.87416 6.00098 8.87416ZM2.54813 15.7296H7.42606C7.08078 15.5287 6.8485 15.0705 6.89244 14.6561H2.49163C2.37235 14.6561 2.32213 14.5996 2.32213 14.4929C2.32213 13.0552 4.00461 11.6867 5.9947 11.6867C6.69783 11.6867 7.40095 11.8624 7.94085 12.1638C8.1543 11.8562 8.41797 11.5925 8.76326 11.3665C7.96596 10.8768 6.97406 10.6131 5.9947 10.6131C3.33915 10.6131 1.19211 12.5091 1.19211 14.5933C1.19211 15.3467 1.64412 15.7296 2.54813 15.7296ZM9.36594 15.7296H17.1882C18.2743 15.7296 18.8016 15.3843 18.8016 14.6436C18.8016 12.9171 16.642 10.6194 13.2771 10.6194C9.91211 10.6194 7.75252 12.9171 7.75252 14.6436C7.75252 15.3843 8.27986 15.7296 9.36594 15.7296ZM9.16504 14.631C9.02065 14.631 8.96415 14.5808 8.96415 14.4678C8.96415 13.5073 10.5148 11.7181 13.2771 11.7181C16.0393 11.7181 17.59 13.5073 17.59 14.4678C17.59 14.5808 17.5335 14.631 17.3828 14.631H9.16504Z" fill="white"/>
+                    <path d="M17.8851 9.75307C17.8788 9.01228 16.868 8.42843 15.6313 8.42843H13.0511C12.6995 8.42843 12.5677 8.36565 12.3542 8.13337L8.09781 3.53167C7.9597 3.381 7.79647 3.30566 7.61441 3.30566H6.80457C6.64134 3.30566 6.54717 3.45633 6.62251 3.62584L8.82605 8.42215L5.60549 8.77999L4.45663 6.7334C4.36874 6.57645 4.2369 6.50739 4.02973 6.50739H3.74723C3.57772 6.50739 3.46472 6.6204 3.46472 6.7899V12.7162C3.46472 12.8857 3.57772 12.9987 3.74723 12.9987H4.02973C4.2369 12.9987 4.36874 12.9297 4.45663 12.7727L5.60549 10.7199L8.82605 11.084L6.62251 15.8803C6.54717 16.0498 6.64134 16.2005 6.80457 16.2005H7.61441C7.79647 16.2005 7.9597 16.1189 8.09781 15.9745L12.3542 11.3728C12.5677 11.1405 12.6995 11.0777 13.0511 11.0777H15.6313C16.868 11.0777 17.8788 10.4876 17.8851 9.75307Z" fill="white"/>
                     </svg>
                 `;
-                let applicantsElements = document.getElementsByClassName('jobs-premium-applicant-insights__list-num');
-                console.log("length: ", applicantsElements.length)
-                let total_applicants = applicantsElements.length > 0 ? applicantsElements[0].innerText : "err_no_premium";
-                if(total_applicants == "err_no_premium"){
-                    const applicantElements = document.querySelectorAll('.job-details-jobs-unified-top-card__primary-description-without-tagline .tvm__text--neutral');
-                    if (applicantElements.length > 0) {
-                        const lastApplicantElement = applicantElements[applicantElements.length - 1];
-                        total_applicants = lastApplicantElement.textContent.trim();
-                    } 
-                    else {
-                        total_applicants = "No applicant info"
-                    }
-                }
-                var applicantsText = document.createElement('h4');
-                applicantsText.id = "applicantsText"
-                applicantsText.innerText = total_applicants + " Applicants";
-                applicantsText.style.cssText = `
+                var sponsorText = document.createElement('h4');
+                sponsorText.id = "sponsor_text"
+                sponsorText.innerText = response.sponsorship + ".";
+                sponsorText.style.cssText = `
                     color: #FFFFFF;
                     font-weight: bold;
                     font-size: 12px;
                     display: flex;
                     margin-left: 5px;
                 `;
-                applicantsData.appendChild(applicantsImage);
-                applicantsData.appendChild(applicantsText);
+                sponsorData.appendChild(sponsorImage);
+                sponsorData.appendChild(sponsorText);
+                
+                
                 var clearanceData = document.createElement('div');
                 clearanceData.style.cssText = `
                     display: flex;
