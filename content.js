@@ -278,7 +278,7 @@ function analyze() {
                 `;
                 var sponsorText = document.createElement('h4');
                 sponsorText.id = "sponsor_text"
-                sponsorText.innerText = response.sponsorship + ".";
+                sponsorText.innerText = response.sponsorship;
                 sponsorText.style.cssText = `
                     color: #FFFFFF;
                     font-weight: bold;
