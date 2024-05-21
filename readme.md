@@ -27,17 +27,17 @@ Scan JD is a free Chrome extension designed to relieve your job search frustrati
     ```
 
 2. Load the extension to Google Chrome:
-    a. Click on three dots on top right corner in Chrome tab
-    b. Click on 'Extensions'
-    c. Click on 'Manage extensions'
-    d. On top right, select 'Developer mode' if not already on
-    e. Select 'Load unpacked'
-    f. It will open a folder selection window, select the Folder SCAN_JD that you cloned from GitHub
+    - Click on three dots on top right corner in Chrome tab
+    - Click on 'Extensions'
+    - Click on 'Manage extensions'
+    - On top right, select 'Developer mode' if not already on
+    - Select 'Load unpacked'
+    - It will open a folder selection window, select the Folder SCAN_JD that you cloned from GitHub
 
 3. Obtain your Free API key or use your paid GPT key:
-    a. Go to https://dashboard.cohere.com/api-keys
-    b. Get your free API key and store it somewhere
-    c. Follow something similar to get GPT keys (if you have a paid account)
+    - Go to https://dashboard.cohere.com/api-keys
+    - Get your free API key and store it somewhere
+    - Follow something similar to get GPT keys (if you have a paid account)
 
 3. Install docker desktop:
     Install docker desktop from official website: https://docs.docker.com/get-docker/ . This will also install docker.
@@ -48,14 +48,14 @@ Scan JD is a free Chrome extension designed to relieve your job search frustrati
     ```
 
 5. Run the container:
-    A. USE FREE MODEL - COHERE COMMAND R
-        ```bash
-        docker run -d -p 8004:8004 -e API_KEY="cohere_api_key" -e MODEL="cohere" --name scanjd_instance kashyapsoni3010/scanjd
-        ```
-    B. USE OPEN AI - PAID MODEL
-        ```bash
-        docker run -d -p 8004:8004 -e API_KEY="open_ai_api_key" -e MODEL="openai" --name scanjd_instance scanjd
-        ```
+    - USE FREE MODEL - COHERE COMMAND R
+    ```bash
+    docker run -d -p 8004:8004 -e API_KEY="cohere_api_key" -e MODEL="cohere" --name scanjd_instance kashyapsoni3010/scanjd
+    ```
+    - USE OPEN AI - PAID MODEL
+    ```bash
+    docker run -d -p 8004:8004 -e API_KEY="open_ai_api_key" -e MODEL="openai" --name scanjd_instance scanjd
+    ```
 
     Please note, do not modify the above command for anything other than the API_KEY value. The MODEL env variable values must be as they are. Feel free to play with --cpus and --memory if you know docker.
 
@@ -71,11 +71,9 @@ Scan JD is a free Chrome extension designed to relieve your job search frustrati
 
 ## Contributors:
 
-    I'd like to thank my friends 
-    [@patel-dhaval](https://github.com/patel-dhaval)
-    [@namankhurpia](https://github.com/namankhurpia)
-    [@MOHIT02082000](https://github.com/MOHIT02082000)
-    for their invaluable contributions in developing SCAN JD
+I'd like to thank my friends 
+[@patel-dhaval](https://github.com/patel-dhaval), [@namankhurpia](https://github.com/namankhurpia)
+, [@MOHIT02082000](https://github.com/MOHIT02082000) for their invaluable contributions in developing SCAN JD
 
 ## Troubleshooting
 Feel free to reach out to me at kashyapd@buffalo.edu for any issues. Mostly refreshing the page should solve almost all the errors, for any errors or bugs, kindly contact kashyapd@buffalo.edu
