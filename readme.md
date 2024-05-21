@@ -14,10 +14,10 @@ Scan JD is a free Chrome extension designed to relieve your job search frustrati
 
 ## Mockups
 
-![Mockup 1](MockUps/im1.png)
-![Mockup 2](MockUps/im2.png)
-![Mockup 3](MockUps/im3.png)
-![Mockup 4](MockUps/im4.png)
+![Mockup 1](Mockups/im1.png)
+![Mockup 2](Mockups/im2.png)
+![Mockup 3](Mockups/im3.png)
+![Mockup 4](Mockups/im4.png)
 
 ## Installation:
 
