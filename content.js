@@ -112,19 +112,13 @@ function load_home_content() {
     leftBody.appendChild(analysisBTN);
     setTimeout(() => {
         analyze();
-    }, 1000);
-    // analysisBTN.addEventListener("click", function () {
-    //     analyze();
-    // });
+    }, 200);
 }
 
 function loadAnalysisRight(data){
     
     let rightA = document.getElementById('right_div');
     rightA.innerHTML = '';
-    // rightA.style.height = '100%';
-
-    // Create a <style> element with the customized scrollbar CSS
     const customScrollbarCSS = `
         #right_div {
             overflow: hidden;

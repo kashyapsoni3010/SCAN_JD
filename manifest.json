@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "ScanJD",
     "version": "1.0",
-    "description": "Inserts a 200x400 yellow div and hits the localhost API if 'mt5' is found.",
+    "description": "Free Chrome Extension for streamlining your job search",
     "permissions": [
       "activeTab"
     ],
